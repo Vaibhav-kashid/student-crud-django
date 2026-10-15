@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    input {
+        border: 1px solid black;
+        padding: 5px;
+        
+    }
+    table, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    </style>
+</head>
+<body>
+    <p>Are you sure you want to delete this student?</p>
+    <table align="center">
+        <tr><td>Name:</td><td>{{ student.name }}</td></tr>
+        <tr><td>Email:</td><td>{{ student.email }}</td></tr>
+        <tr><td>Age:</td><td>{{ student.age }}</td></tr>
+        <tr><td>Course:</td><td>{{ student.course }}</td></tr>
+    </table>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</body>
+</html>
